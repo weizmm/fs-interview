@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.get('/api/users', (req, res) => {
@@ -12,4 +12,4 @@ app.get('/api/users', (req, res) => {
     res.sendStatus(200);
 });
 
-app.listen(port, () => { `Listen on port ${port}` });
+app.listen(port, () => { console.log(`Listen on port ${port}`) });
